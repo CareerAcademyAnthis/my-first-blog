@@ -7,18 +7,14 @@
         <header>
             <h1><a href="/">McKinstry Blog</a></h1>
         </header>
-
-        <article>
-            <time>published: 10.18.2024, 0936</time>
-            <h2><a href="">My first post</a></h2>
-            <p>This post is about what you would like to put in a blog post</p>
-        </article>
-
-        <article>
-            <time>published: 10.18.2024, 0936</time>
-            <h2><a href="">My second post</a></h2>
-            <p>This post is about what you would like to put in a blog post</p>
-        </article>
         
+        {% for post in posts %}
+            </article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
+                
     </body>
 </html>
